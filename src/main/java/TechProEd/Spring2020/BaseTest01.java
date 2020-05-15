@@ -11,6 +11,8 @@ public class BaseTest01 {
 	
 	@Before
 	public void setUp01() {
-		spec01 = new RequestSpecBuilder().setBaseUri("https://restful-booker.herokuapp.com").build();
+		spec01 = new RequestSpecBuilder().
+				             setBaseUri("https://restful-booker.herokuapp.com").
+				             build();
 	}
 }
