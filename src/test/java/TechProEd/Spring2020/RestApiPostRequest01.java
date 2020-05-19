@@ -46,6 +46,13 @@ public class RestApiPostRequest01 extends BaseTest {
 	// For that API "additionalneeds" are not mandatory but others mandatory.
 	// If you do not send mandatory things you will get "400 Bad Request" message.
 	
+	// During POST request, some values can be unique. 
+	// If unique values are used before, our POST request will fail. 
+	// To handle that problem;
+	// 1) Delete data after every post
+	// 2) Delete data from data base by using SQL Delete Queries
+	// 3) Delete data from data base by using API Delete methods
+	
 	@Test
 	public void postTest01() {
 		
@@ -111,7 +118,7 @@ public class RestApiPostRequest01 extends BaseTest {
 	public void postTest02() {
 		
 		//2nd Way: Creating Json Object by using JSONObject Class		
-		//         Add JSON Maven dependency ==> Update Maven Project ==> Save
+		//Add JSON Maven dependency ==> Update Maven Project ==> Save
 		
 		JSONObject jsonReqBody = new JSONObject();
 		jsonReqBody.put("firstname", "Suleyman");
