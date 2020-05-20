@@ -1,16 +1,17 @@
 package TechProEd.Spring2020;
 
-import org.junit.Test;
-import org.testng.asserts.SoftAssert;
-
-import io.restassured.path.json.JsonPath;
-import io.restassured.response.Response;
-import static io.restassured.RestAssured.*;
+import static io.restassured.RestAssured.given;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import org.junit.Test;
+import org.testng.asserts.SoftAssert;
+
+import io.restassured.path.json.JsonPath;
+import io.restassured.response.Response;
 
 public class GetRequest15 extends BaseTest01 {
      
@@ -63,10 +64,7 @@ public class GetRequest15 extends BaseTest01 {
 		
 		for(int i=0; i<5; i++) {
 			softAssert.assertEquals(actualList.get(i).get("employee_name"), expectedMap.get(i));
-		}
-		
+		}		
 		softAssert.assertAll();
-
 	}
-
 }

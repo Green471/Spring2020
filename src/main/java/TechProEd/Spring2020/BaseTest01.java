@@ -42,4 +42,41 @@ public class BaseTest01 {
                 setBaseUri("https://jsonplaceholder.typicode.com/todos").
                 build();
 	}	
+	
+	protected Response createResponseForPost() {
+		
+		JSONObject jsonReqBody = new JSONObject();
+		jsonReqBody.put("firstname","Suleyman");
+		jsonReqBody.put("lastname","Alptekin");
+		jsonReqBody.put("totalprice",123);
+		jsonReqBody.put("depositpaid",true);
+		
+		JSONObject jsonBookingDatesBody = new JSONObject();
+		jsonBookingDatesBody.put("checkin", "2020-05-02");
+		jsonBookingDatesBody.put("checkout", "2020-05-05");
+		
+		jsonReqBody.put("bookingdates",jsonBookingDatesBody);
+		jsonReqBody.put("additionalneeds","Wifi");
+		
+		Response response = given(). 
+				               contentType(ContentType.JSON). // "application/json"
+				               spec(spec01).
+				               auth().
+				               basic("admin","password123").
+				               body(jsonReqBody.toString()).
+				            when(). 
+				               post("/booking");
+
+		return response;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
