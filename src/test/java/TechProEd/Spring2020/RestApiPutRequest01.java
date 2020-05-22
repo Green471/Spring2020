@@ -2,8 +2,6 @@ package TechProEd.Spring2020;
 
 import static io.restassured.RestAssured.given;
 
-import java.util.Map;
-
 import org.json.JSONObject;
 import org.junit.Test;
 import org.testng.asserts.SoftAssert;
@@ -15,7 +13,7 @@ import io.restassured.response.Response;
 public class RestApiPutRequest01 extends BaseTest01  {
 
 		@Test
-		public void postTest05(){
+		public void putTest01(){
 			
 			//1. Step: Create a booking	and see it on the console
 			Response responseCreated = createResponseForPost();
