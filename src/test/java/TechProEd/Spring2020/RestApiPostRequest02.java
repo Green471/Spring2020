@@ -38,6 +38,7 @@ public class RestApiPostRequest02 extends BaseTest {
 	    	
 	    	Response response = given().
 					                auth().
+					                preemptive().
 					                basic("admin", "password123").
 					                contentType(ContentType.JSON).
 					                spec(spec01).
@@ -79,9 +80,9 @@ public class RestApiPostRequest02 extends BaseTest {
 			 softAssert.assertEquals(json.get("booking.additionalneeds"), booking.getAdditionalneeds(), "Additional needs did not match");
 			 
 			 //Verify All fields in one step
-			 //softAssert.assertEquals(bookingid.getBooking().toString(), booking.toString());
-			 System.out.println(bookingid.getBooking().toString());
+			 System.out.println(bookingid.toString());
 			 System.out.println(booking.toString());
+			 softAssert.assertEquals(bookingid.getBooking().toString(), booking.toString());
 			 softAssert.assertAll();
         }
 

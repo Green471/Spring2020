@@ -4,6 +4,11 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class Booking {
+	
+	//Create Getters and Setters
+	//Create constructor with all parameters
+	//Create constructor with no parameters
+	//Create toString()
 
 	@SerializedName("firstname")
 	@Expose
@@ -83,5 +88,12 @@ public class Booking {
 	}
 
 	public Booking() {
+	}
+
+	@Override
+	public String toString() {
+		return "Booking [firstname=" + firstname + ", lastname=" + lastname + ", totalprice=" + totalprice
+				+ ", depositpaid=" + depositpaid + ", bookingdates=" + bookingdates + ", additionalneeds="
+				+ additionalneeds + "]";
 	}
 }

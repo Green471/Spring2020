@@ -4,10 +4,16 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class BookingId {
+	
+	//Create Getters and Setters
+	//Create constructor with all parameters
+	//Create constructor with no parameters
+	//Create toString()
 
 	@SerializedName("bookingid")
 	@Expose
 	private Integer bookingid;
+	
 	@SerializedName("booking")
 	@Expose
 	private Booking booking;
