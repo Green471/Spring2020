@@ -34,11 +34,13 @@ public class BookingId {
 	this.booking = booking;
 	}
 
+	//If there is super() delete it
 	public BookingId(Integer bookingid, Booking booking) {
 		this.bookingid = bookingid;
 		this.booking = booking;
 	}
 	
+	//If there is super() delete it
 	public BookingId() {
 	}
 

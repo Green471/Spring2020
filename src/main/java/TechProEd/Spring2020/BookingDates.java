@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName;
 
 public class BookingDates {
 	
-	//Create Getters and Setters
+	//Create Getters and Setters by using http://www.jsonschema2pojo.org/
 	//Create constructor with all parameters
 	//Create constructor with no parameters
 	//Create toString()
@@ -33,11 +33,12 @@ public class BookingDates {
 	this.checkout = checkout;
 	}
 
+	//If there is super() inside the constructors delete it
 	public BookingDates(String checkin, String checkout) {
 		this.checkin = checkin;
 		this.checkout = checkout;
 	}
-	
+	//If there is super() inside the constructors delete it
 	public BookingDates() {
 	}
 

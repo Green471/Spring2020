@@ -77,6 +77,7 @@ public class Booking {
 	this.additionalneeds = additionalneeds;
 	}
 
+	//If you see super() delete from inside the constructor.
 	public Booking(String firstname, String lastname, Integer totalprice, Boolean depositpaid,
 			BookingDates bookingdates, String additionalneeds) {
 		this.firstname = firstname;
@@ -87,6 +88,7 @@ public class Booking {
 		this.additionalneeds = additionalneeds;
 	}
 
+	//If you see super() delete from inside the constructor.
 	public Booking() {
 	}
 
@@ -96,4 +98,5 @@ public class Booking {
 				+ ", depositpaid=" + depositpaid + ", bookingdates=" + bookingdates + ", additionalneeds="
 				+ additionalneeds + "]";
 	}
+
 }

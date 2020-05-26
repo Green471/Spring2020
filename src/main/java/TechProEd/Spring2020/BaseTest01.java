@@ -2,6 +2,9 @@ package TechProEd.Spring2020;
 
 import static io.restassured.RestAssured.given;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.json.JSONObject;
 import org.junit.Before;
 
@@ -66,6 +69,52 @@ public class BaseTest01 {
 				               body(jsonReqBody.toString()).
 				            when(). 
 				               post("/booking");
+
+		return response;
+	}
+	
+	protected Response createMapForRequestBody() {
+		
+		Map requestMap = new HashMap<>();
+		requestMap.put("firstname", "Suleyman");
+		requestMap.put("lastname", "Alptekin");
+		requestMap.put("totalprice", 123);
+		requestMap.put("depositpaid", true);
+		
+		Map bookingDatesMap = new HashMap<>();
+		bookingDatesMap.put("checkin", "2020-05-02");
+		bookingDatesMap.put("checkout", "2020-05-05");
+		
+		requestMap.put("bookingdates",bookingDatesMap);
+		requestMap.put("additionalneeds", "Wifi");
+		
+		Response response = given(). 
+	               contentType(ContentType.JSON). // or "application/json"
+	               spec(spec01).
+	               auth().
+	               basic("admin","password123").
+	               body(requestMap).
+	            when(). 
+	               post("/booking");
+		
+		return response;
+	}
+	
+protected Response createResponseForPost01() {
+		
+		JSONObject jsonReqBody = new JSONObject();
+		jsonReqBody.put("userId",11);
+		jsonReqBody.put("title","Suleyman Alptekin");
+		jsonReqBody.put("completed",true);
+		
+		Response response = given(). 
+				               contentType(ContentType.JSON). // "application/json"
+				               spec(spec03).
+//				               auth().
+//				               basic("admin","password123").
+				               body(jsonReqBody.toString()).
+				            when(). 
+				               post();
 
 		return response;
 	}
