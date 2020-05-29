@@ -49,7 +49,6 @@ public class PutRequest02 extends BaseTest01 {
 				softAssert.assertEquals(json.getInt("userId"), 33, "User Id is not updated");
 				softAssert.assertEquals(json.getString("title"), "TechPro Education", "Title is not updated");
 				
-				softAssert.assertAll();
-				               
+				softAssert.assertAll();				               
 	}
 }
